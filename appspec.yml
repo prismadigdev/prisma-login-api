@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/centos/hensall-onelogin-api
+    overwrite: true
+hooks:
+  ApplicationStart:
+    - location: scripts/flask.sh
+      timeout: 3600

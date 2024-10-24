@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block card %}
+
+
+    <p style="margin: 1rem 0; font-size: 25px;">New Order</p>
+<img style="width: 190px; display: block; margin: 0 auto; padding-bottom: 1rem"
+                src="https://hensallco-op.ca/userContent/images/red-and-yellow-divider-576px.png" alt="line">
+
+            <div class="invoice" style="text-align: left; width: 90%; max-width: 800px; margin: 0 auto;">
+                <div style="display: flex; border-bottom: 1px solid #dddddd; border-top: 1px solid #dddddd;">
+                    <b style="width: 30%; margin: 0; padding: .5rem; background-color: #f2f2f2;">
+                        Customer</b>
+                    <p style="width: 70%; margin: 0; padding: .5rem;">{{delivery.customer_site.customer.customer_number}} - {{delivery.customer_site.customer.name}}</p>
+                </div>
+                <div style="display: flex; border-bottom: 1px solid #dddddd;">
+                    <b style="width: 30%; margin: 0; padding: .5rem; background-color: #f2f2f2;">
+                        Site address</b>
+                    <p style="width: 70%; margin: 0; padding: .5rem;">{{delivery.customer_site.delivery_address1}}</p>
+                </div>
+                <div style="display: flex; border-bottom: 1px solid #dddddd;">
+                    <b style="width: 30%; margin: 0; padding: .5rem; background-color: #f2f2f2;">
+                        Site description</b>
+                    <p style="width: 70%; margin: 0; padding: .5rem;">{{delivery.customer_site.description}}</p>
+                </div>
+                <div style="display: flex; border-bottom: 1px solid #dddddd;">
+                    <b style="width: 30%; margin: 0; padding: .5rem; background-color: #f2f2f2;">
+                        Note</b>
+                    <p style="width: 70%; margin: 0; padding: .5rem; min-height: 100px;">{{delivery.observation}}</p>
+                </div>
+                <div style="display: flex; border-bottom: 1px solid #dddddd;">
+                    <b style="width: 30%; margin: 0; padding: .5rem; background-color: #f2f2f2;">
+                        Created by</b>
+                    <p style="width: 70%; margin: 0; padding: .5rem;">{{delivery.user_created}}</p>
+                </div>
+            </div>
+
+
+
+    <p style="margin: 1rem 0; font-size: 20px;">Order Details</p>
+    <img style="width: 190px; display: block; margin: 0 auto; padding-bottom: 0rem"
+                src="https://hensallco-op.ca/userContent/images/red-and-yellow-divider-576px.png" alt="line">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Asset</th>
+                        <th>Product</th>
+                        <th>Quantity Type</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for detail in delivery.delivery_dispatch_order_details %}
+                    <tr>
+                        <td>{{detail.customer_asset.description}}</td>
+                        <td>{{detail.customer_asset.product.product_code}} - {{detail.customer_asset.product.description}}</td>
+                        <td>{{detail.quantity_type}}</td>
+                        <td>{% if detail.quantity_type != "fill" %}
+                            <p>{{detail.quantity}}</p>
+                        {% endif %}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+
+  {% endblock %}

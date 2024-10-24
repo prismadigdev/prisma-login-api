@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Verdana, Geneva, sans-serif;
+        }
+
+        table {
+            border-spacing: 1;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 4px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            width: 90%;
+        }
+
+        table * {
+            position: relative;
+        }
+
+        table td,
+        table th {
+            padding-left: 8px;
+        }
+
+        table thead tr {
+            background: #d92632;
+            font-size: 16px;
+            height: 30px;
+        }
+
+        table tbody tr {
+            border-bottom: 1px solid #ffb69b;
+            height: 48px;
+        }
+
+        table tbody tr:last-child {
+            border: 0;
+        }
+
+        table td,
+        th {
+            color: white;
+        }
+
+        td {
+            color: black !important;
+        }
+
+        table th {
+            text-align: center;
+        }
+
+        table td.l,
+        table th.l {
+            text-align: right;
+        }
+
+        table td.c,
+        table th.c {
+            text-align: center;
+        }
+
+        table td.r,
+        table th.r {
+            text-align: center;
+        }
+
+        @media screen and (max-width: 35.5em) {
+            table {
+                display: block;
+            }
+
+            table>*,
+            table tr,
+            table td,
+            table th {
+                display: block;
+            }
+
+            table thead {
+                display: none;
+            }
+
+            table tbody tr {
+                height: auto;
+                padding: 8px 0;
+            }
+
+            table tbody tr td {
+                text-align: left;
+                margin-bottom: 12px;
+                padding-left: 45%;
+            }
+
+            table tbody tr td:last-child {
+                margin-bottom: 0;
+            }
+
+            table tbody tr td:before {
+                font-weight: 700;
+                left: 10px;
+                position: absolute;
+                top: 0;
+                width: 40%;
+            }
+
+            table tbody tr td:nth-child(1):before {
+                content: "Asset";
+            }
+
+            table tbody tr td:nth-child(2):before {
+                content: "Product";
+            }
+
+            table tbody tr td:nth-child(3):before {
+                content: "Quantity Type";
+            }
+
+            table tbody tr td:nth-child(4):before {
+                content: "Quantity";
+            }
+        }
+
+        blockquote {
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body style="min-width: 375px;">
+    <div style="background-color: #dcdcdc; width: 100%; padding: 3rem 0;">
+        <div style="text-align: center; background-color: #ffffff; margin: 0 auto; width: 80%; border-radius: 8px;">
+            <img style="margin: 3rem 0 1.5rem 0; width: 190px" src="https://hensallco-op.ca/images/logo.png" alt="logo">
+
+            {% block card %}
+            {% endblock %}
+
+            <div style="margin-top: 1rem; width: 100%; border-top: 2px solid #ed8400; padding: 1rem 0">
+                <p>© Copyright 2022 Hensall Co-op <br> All Rights Reserved.</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

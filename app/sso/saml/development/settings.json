@@ -1,0 +1,37 @@
+{
+    "sp": {
+	"entityId": "https://olnew-api.prismaqa.com",
+        "assertionConsumerService": {
+            "url": "https://olnew-api.prismaqa.com/api/v1/sso/acs",
+            "binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+        },
+	"singleLogoutService": {
+            "url": "https://olnew-api.prismaqa.com/api/v1/sso",
+            "binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+        },
+	"NameIDFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"
+    },
+    "idp": {
+	"entityId": "https://sts.windows.net/dea339d8-677b-463c-9204-c7206ea8df02/",
+        "singleSignOnService": {
+            "url": "https://login.microsoftonline.com/dea339d8-677b-463c-9204-c7206ea8df02/saml2",
+            "binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+        },
+	"singleLogoutService": {
+            "url": "https://login.microsoftonline.com/dea339d8-677b-463c-9204-c7206ea8df02/saml2",
+            "binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+        },
+        "x509cert": "MIIC8DCCAdigAwIBAgIQYeLg/6cq84JOUtf5TxvXozANBgkqhkiG9w0BAQsFADA0MTIwMAYDVQQDEylNaWNyb3NvZnQgQXp1cmUgRmVkZXJhdGVkIFNTTyBDZXJ0aWZpY2F0ZTAeFw0yNDA4MTMwNDU5MjNaFw0yNzA4MTMwNDU5MjJaMDQxMjAwBgNVBAMTKU1pY3Jvc29mdCBBenVyZSBGZWRlcmF0ZWQgU1NPIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1L4u1EYEUrC6Dh5KImt7F06rQ3UCJl9fpgqCbTM2OPoN1KO4TiAo2FsHFcw9Fcr0p8ESQdAlASbuZfhfJv5sZn4mDNqqidcnd5hjIiGELrivmfmlsC5rWfskSgfhvR5hf48AQ+Ha/nEfH88Q6jKHpDwjWxwyBXgFraP2CshvCvIo2wc2FFYJlN/6pqTw2mD4jydBrP72R9IIZYXgYWRXxZI0UdP/mzuwrdQXjff53asFxUhdFKTEQqjHXrB6c6y++3BzsoxDz2nieF2t+lF7QN9O5LI+D3FV3bpOkePjAmkXPW7J/ZQQDCzHn17CUpWIHABGxaUWGS7s7EA44CkaRQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQDUuDHC15qIbl6vUWhgrKRspT9a6O/VZXjFbHG+glXMSw/5ijUyfe1CpC0/d6vQsZw8ZTnxUjG/LW+q863FHlcCg+Wu6lWvf2mTlQMagGR1oZ3AiNMi0i/dZiCgE5of2+jKyTCZd/dKaIqqNsZ+N0rAuoBtnCY3pWJw1n/uocdRi+Y4MilPFviWlapnniIT+41S/kbcj+Dg7t/fx0EWJh5/Gx++37zWpgtnm3xYtBTLmMn5aTnlTBJTCQHSfphr+//3yYhHSqB5w/uaj67w54ISXPHGsemPsh1N5yBSFl5+sL5VFmswmfoH+TzXMv1BoKjjJpDtxFzyzcPdbKz151OU"
+    },
+    "security": {
+        "authnRequestsSigned": true,
+        "logoutRequestsSigned": true,
+        "logoutResponsesSigned": true,
+        "wantAssertionsSigned": true,
+        "wantMessagesSigned": true,
+        "signatureAlgorithm": "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256",
+        "digestAlgorithm": "http://www.w3.org/2001/04/xmlenc#sha256",
+        "debug": true
+    }
+}
+
